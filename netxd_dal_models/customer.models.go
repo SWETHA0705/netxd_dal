@@ -1,4 +1,4 @@
-package netxddal
+package netxddalmodels
 
 
 type Customer struct{

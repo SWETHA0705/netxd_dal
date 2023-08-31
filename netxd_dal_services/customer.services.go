@@ -2,7 +2,7 @@ package netxddalservices
 
 import (
 	"context"
-	netxddalinterfaces " github.com/SWETHA0705/netxd_dal/netxd_dal_interfaces"
+	netxddalinterfaces "github.com/SWETHA0705/netxd_dal/netxd_dal_interfaces"
 	netxddal "github.com/SWETHA0705/netxd_dal/netxd_dal_models"
 	"time"
 
