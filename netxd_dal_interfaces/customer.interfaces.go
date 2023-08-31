@@ -1,6 +1,6 @@
 package netxddalinterfaces
 
-import netxddal "netxd_project/dal/netxd_dal/netxd_dal_models"
+import netxddal "github.com/SWETHA0705/netxd_dal/netxd_dal_models"
 
 
 type ICustomer interface{

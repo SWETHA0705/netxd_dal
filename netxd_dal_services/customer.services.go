@@ -2,8 +2,8 @@ package netxddalservices
 
 import (
 	"context"
-	netxddalinterfaces "netxd_project/dal/netxd_dal/netxd_dal_interfaces"
-	netxddal "netxd_project/dal/netxd_dal/netxd_dal_models"
+	netxddalinterfaces " github.com/SWETHA0705/netxd_dal/netxd_dal_interfaces"
+	netxddal "github.com/SWETHA0705/netxd_dal/netxd_dal_models"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
