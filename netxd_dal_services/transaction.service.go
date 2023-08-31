@@ -13,18 +13,19 @@ import (
 
 type Transaction struct{
 	TransactionCollection *mongo.Collection
+	CustomerCollection *mongo.Collection
 	ctx context.Context
 }
 
-func InitialiseTransactionService(transactioncollection *mongo.Collection,ctx context.Context)(netxddalinterfaces.Itransaction){
-	return &Transaction{transactioncollection,ctx}
+func InitialiseTransactionService(transactioncollection *mongo.Collection, customercollection *mongo.Collection, ctx context.Context)(netxddalinterfaces.Itransaction){
+	return &Transaction{transactioncollection,customercollection,ctx}
 }
 
 func (s* Transaction)Transaction(FromId int64,ToId int64, amount int64 )(string,error){
 	
 	fmt.Println(FromId)
-	_, err2 := s.TransactionCollection.UpdateOne(context.Background(), bson.M{"CustomerId": ToId}, bson.M{"$inc": bson.M{"balance": amount}})
-	_, err2 = s.TransactionCollection.UpdateOne(context.Background(), bson.M{"CustomerId": FromId}, bson.M{"$inc": bson.M{"balance": -amount}})
+	_, err2 := s.CustomerCollection.UpdateOne(context.Background(), bson.M{"CustomerId": ToId}, bson.M{"$inc": bson.M{"balance": amount}})
+	_, err2 = s.CustomerCollection.UpdateOne(context.Background(), bson.M{"CustomerId": FromId}, bson.M{"$inc": bson.M{"balance": -amount}})
 	if err2!= nil{
 		return "",err2
 	}
